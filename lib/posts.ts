@@ -6,6 +6,9 @@ import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+/**
+ * mdファイルを変換し、日付順にソートする.
+ */
 export function getSortedPostsData() {
     // /posts　配下のファイル名を取得する
     const fileNames = fs.readdirSync(postsDirectory);
@@ -36,6 +39,9 @@ export function getSortedPostsData() {
     })
 }
 
+/**
+ * 全ての記事IDを取得.
+ */
 export function getAllPostIds() {
     const fileNames = fs.readdirSync(postsDirectory);
 
@@ -48,6 +54,11 @@ export function getAllPostIds() {
     })
 }
 
+/**
+ * idに紐づく記事データを取得.
+ *
+ * @param id
+ */
 export async function getPostData(id) {
     const fullPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');

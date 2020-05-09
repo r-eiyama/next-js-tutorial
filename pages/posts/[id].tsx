@@ -5,6 +5,12 @@ import Head from 'next/head'
 import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 
+/**
+ * 記事を生成するメソッド.
+ *
+ * @param postData
+ * @constructor
+ */
 export default function Post({ postData }: {
     postData: {
         title: string
@@ -28,6 +34,9 @@ export default function Post({ postData }: {
     )
 }
 
+/**
+ * パスを生成するメソッド.
+ */
 export async function getStaticPaths() {
     const paths = getAllPostIds();
     return {
@@ -36,6 +45,11 @@ export async function getStaticPaths() {
     }
 }
 
+/**
+ * postに渡すデータの静的生成.
+ *
+ * @param params
+ */
 export async function getStaticProps({ params }) {
     const postData = await getPostData(params.id as string);
     return {

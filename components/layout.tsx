@@ -7,6 +7,13 @@ import React from "react";
 const name = 'Ken Eiyama';
 export const siteTitle = 'Next.js Sample Website';
 
+/**
+ * レイアウトを管理するメソッド.
+ *
+ * @param children
+ * @param home
+ * @constructor
+ */
 export default function Layout({
                                    children, home
                                }: {

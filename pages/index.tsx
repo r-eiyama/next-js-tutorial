@@ -7,6 +7,12 @@ import Date from '../components/date'
 import {GetStaticProps} from 'next'
 import React from 'react'
 
+/**
+ * ホーム画面を表示するメソッド.
+ *
+ * @param allPostsData
+ * @constructor
+ */
 export default function Home({
                                  allPostsData
                              }: {
